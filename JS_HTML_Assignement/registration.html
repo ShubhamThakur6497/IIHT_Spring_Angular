@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body style="background-color: #039dfc;">
+    <div style="background-color: white; height: 15cm; width: 25cm; margin-left: 4cm;" >
+        <h2 style="text-align: left; font-style: normal; font-weight: bold; font: icon; font-size: 0.8cm; margin-left: 0.25cm;">Registration</h2>
+        <h3 style="font-weight: lighter;font: icon; font-size: 0.6cm; margin-left: 0.25cm">Personal Details</h3>
+
+        <label style="text-align: left; font: icon; margin-left: 0.25cm " for="fullName">Full Name</label>
+        <label style="text-align: left;  margin-left: 7cm; font: icon;" for="dob">Date of birth </label>
+        <label style="text-align: left;  margin-left: 7cm; font: icon;" for="email">Email</label>
+        <br/>
+
+        <input style="text-align: left; margin-top: 0.25cm;font: icon; margin-left: 0.25cm" placeholder="Enter your Full Name" type="text" id="fullName"/>
+        <input style="text-align: left; margin-top: 0.25cm; margin-left: 3.6cm; font: icon;" placeholder="Enter your DOB" type="date" id="dob"/>
+        <input style="text-align: left; margin-top: 0.25cm; margin-left: 5.6cm; font: icon;" placeholder="Enter your Email" type="text" id="email"/>
+        <br/>
+        <br/>
+
+        <label style="text-align: left; font: icon; margin-left: 0.25cm" for="mobNum">Mobile Number</label>
+        <label style="text-align: left;  margin-left: 6cm; font: icon;" for="gender">Gender</label>
+        <label style="text-align: left;  margin-left: 8cm; font: icon;" for="occupation">Occupation</label>
+        <br/>
+
+        <input style="text-align: left; margin-top: 0.25cm; font: icon; margin-left: 0.25cm" placeholder="Enter Mobile Number" type="text" id="mobNum"/>
+        <input style="text-align: left; margin-top: 0.25cm; margin-left: 3.5cm; font: icon;" placeholder="Enter your Gender" type="text" id="gender"/>
+        <input style="text-align: left; margin-top: 0.25cm; margin-left: 4cm; font: icon;" placeholder="Enter Occupation" type="text" id="occupation"/>
+        <br/>
+        <br/>
+
+        <h3 style="font-weight: lighter;font: icon; margin-left: 0.25cm">Identity Details</h3>
+        <br/>
+
+        <label style="text-align: left; font: icon; margin-left: 0.25cm" for="idTyp">ID Type</label>
+        <label style="text-align: left;  margin-left: 7.4cm; font: icon;" for="idNum">ID Number</label>
+        <label style="text-align: left;  margin-left: 7.4cm; font: icon;" for="issAuth">Issue Authority</label>
+        <br/>
+
+        <input style="text-align: left; margin-top: 0.25cm; font: icon;margin-left: 0.25cm" id="idTyp" placeholder="Enter ID Type" type="text"/>
+        <input style="text-align: left; margin-top: 0.25cm; margin-left: 3.5cm; font: icon;" id="idNum" placeholder="Enter ID Number" type="text"/>
+        <input style="text-align: left; margin-top: 0.25cm; margin-left: 4.1cm; font: icon;" id="issAuth" placeholder="Enter Issue Department" type="text"/>
+        <br/>
+        <br/>
+
+        <label style="text-align: left; font: icon; margin-left: 0.25cm" for="issDate">Issue Date</label>
+        <label style="text-align: left;  margin-left: 6.8cm; font: icon;" for="issState">Issue State</label>
+        <label style="text-align: left;  margin-left: 7.3cm; font: icon;" for="expDate">Expiry Date</label>
+        <br/>
+
+        <input style="text-align: left; margin-top: 0.25cm; font: icon; margin-left: 0.25cm" id="issDate" placeholder="Enter Issue date" type="date"/>
+        <input style="text-align: left; margin-top: 0.25cm; margin-left: 5.1cm; font: icon;" id="issState" placeholder="Enter Issue State" type="text"/>
+        <input style="text-align: left; margin-top: 0.25cm; margin-left: 4.1cm; font: icon;" id="expDate" placeholder="Enter Expiry date" type="date"/>
+        <br/>
+        <br/>
+
+        <a href="#" class ="next" style="margin-left: 0.25cm ; width: 3cm; text-align: center;" onclick="printOnConsole()">Next </a>
+        
+
+    </div>
+
+    
+    
+</body>
+<style>
+    a{
+        text-decoration:none;
+        display: inline-block;
+        padding: 8px 16px;
+    }
+    a:hover{
+        background-color: #ddd;
+        color:black
+    }
+    .next{
+        background-color: #04AA6D;
+        color:white;
+    }
+</style>
+<script>
+
+function printOnConsole(){
+
+        console.log(document.getElementById("fullName").value);
+        console.log(document.getElementById("email").value);
+        console.log(document.getElementById("dob").value);
+        console.log(document.getElementById("mobNum").value);
+        console.log(document.getElementById("gender").value);
+        console.log(document.getElementById("occupation").value);
+        console.log(document.getElementById("idTyp").value);
+        console.log(document.getElementById("idNum").value);
+        console.log(document.getElementById("issAuth").value);
+        console.log(document.getElementById("issDate").value);
+        console.log(document.getElementById("issState").value);
+        console.log(document.getElementById("expDate").value);
+
+        window.location.href="next.html";
+       
+    }
+
+
+</script>
+</html>
