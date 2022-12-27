@@ -1,0 +1,26 @@
+@import url("./../../app.component.css");
+
+header {
+    background-color: #008080;
+    color: #ffffff;
+}
+img {
+    height: 40px;
+    width: 80px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+p {
+    font-size: 8px;
+    font-weight: 400;
+}
+
+.btn {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+}

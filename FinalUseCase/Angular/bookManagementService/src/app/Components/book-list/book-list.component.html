@@ -1,0 +1,54 @@
+<div class="message-banner p-2 d-flex justify-content-center align-items-center" *ngIf="showMessageBanner">
+  <span>
+    Book is updated successfully
+  </span>
+  <a href="javascript:void(0)" class="ms-auto" (click)="showMessageBanner = false">
+    <i class="fa fa-times" aria-hidden="true"></i>
+  </a>
+</div>
+
+<ngx-loading [show]="showLoader" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+
+<div class="list-group mt-3" *ngFor="let book of books">
+  <div class="list-group-item d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+      <img src="./../../../assets/img/logo.PNG" [alt]="book.bookName">
+      <div class="d-flex flex-column justify-content-center ms-2">
+        <span class="title font-weight-bold">{{book && book.bookName}}</span>
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="d-flex flex-column">
+            <span>Published by: {{book && book.publisher}}, {{getDate(book.creationDate)}}</span>
+            <span>Price: {{book && book.price}}</span>
+          </div>
+          <div class="d-flex align-self-start flex-column ms-3">
+            <span>Category: {{book && book.category}}</span>
+            <span>Author: {{book && book.author}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="isUserLoggedIn" class="d-flex justify-content-between align-items-center ms-2">
+      <a *ngIf="loggedInUser && (loggedInUser.accessLevel === 'author' || (loggedInUser.accessLevel === 'reader' &&  book.subsriptionStatus))" class="ms-2" href="javascript:void(0)"
+      (click)="getBookContent(book)">
+      <!-- <i class="far fa-edit"></i> -->
+      Read
+    </a>
+      <a *ngIf="loggedInUser && loggedInUser.accessLevel === 'author'" class="ms-2" href="javascript:void(0)"
+        (click)="editBook(book)">
+        <!-- <i class="far fa-edit"></i> -->
+        Edit
+      </a>
+      <a *ngIf="loggedInUser && loggedInUser.accessLevel === 'author'" class="ms-2" href="javascript:void(0)"
+        (click)="updateBookStatus(book)">
+        <ng-container *ngIf="book.status">Block</ng-container>
+        <ng-container *ngIf="!book.status">Unblock</ng-container>
+      </a>
+      <a *ngIf="loggedInUser && loggedInUser.accessLevel === 'reader'" class="ms-2" href="javascript:void(0)"
+        (click)="updateSubsription(book)">
+        <ng-container *ngIf="!book.subsriptionStatus">Subscribe</ng-container>
+        <ng-container *ngIf="book.subsriptionStatus">UnSubscribe</ng-container>
+      </a>
+    </div>
+  </div>
+</div>

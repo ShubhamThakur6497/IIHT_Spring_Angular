@@ -1,0 +1,13 @@
+form {
+    background: #008080;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right,	#006666, #008080);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #006666, #008080); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 5px;
+    box-shadow: 0px 0px 30px #f7f7f7;
+    color: #fff;
+    min-width: 544px;
+}
+
+.form-control {
+    width: 66%;
+}

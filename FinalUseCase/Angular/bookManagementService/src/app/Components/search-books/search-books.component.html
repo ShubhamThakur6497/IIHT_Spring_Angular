@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<div *ngIf="isSearch" class="container-fluid mb-5 pb-3 d-flex flex-column justify-content-between align-items-center">
+    <h2 class="text-center">Search Books</h2>
+    <ngx-loading [show]="showLoader" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+
+    <form (ngSubmit)="searchBooks()" class="d-flex flex-column justify-content-center mt-2 p-3" #bookForm="ngForm">
+        <div class="form-group w-100 d-flex mb-2">
+            <label class="col-4" for="title">Title</label>
+            <input type="text" class="col-8 form-control" id="title" placeholder="Enter title" [(ngModel)]="bookToSearch.bookName"
+                name="title" #bookName="ngModel">
+        </div>
+
+        <div class="form-group w-100 d-flex mb-2">
+            <label class="col-4" for="category">Category</label>
+            <input type="text" class="col-8 form-control" id="category" placeholder="Enter category"
+                [(ngModel)]="bookToSearch.category" name="category">
+        </div>
+
+        <div class="form-group w-100 d-flex mb-2">
+            <label class="col-4" for="author">Author</label>
+            <input type="text" class="col-8 form-control" id="author" placeholder="Enter author"
+                [(ngModel)]="bookToSearch.author" name="author">
+        </div>
+
+        <div class="form-group w-100 d-flex mb-2">
+            <label class="col-4" for="creationDate">Released Date</label>
+            <input type="date" class="col-8 form-control" id="creationDate" placeholder="Enter release date"
+                [(ngModel)]="bookToSearch.creationDate" name="creationDate">
+        </div>
+
+        <button type="submit" class="btn mt-3 align-self-center btn-success" [disabled]="!bookForm.form.valid">Search</button>
+    </form>
+</div>
+<div *ngIf="!isSearch" class="container-fluid mb-5 pb-3 d-flex flex-column justify-content-between align-items-center" >
+    <h2>Searched Book</h2>
+    <app-book-list [books]="searchedBooks"></app-book-list>
+</div>
+
+
+<app-footer></app-footer>

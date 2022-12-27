@@ -1,0 +1,9 @@
+:root {
+    --main-theme-color1: #008080;
+    --white: #ffffff; 
+  }
+
+main {
+  min-height: 320px;
+  padding-bottom: 90px;
+  }

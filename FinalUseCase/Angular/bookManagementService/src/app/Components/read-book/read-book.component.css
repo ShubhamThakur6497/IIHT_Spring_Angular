@@ -1,0 +1,10 @@
+.content {
+    background: #008080; 
+    background: -webkit-linear-gradient(to right,	#006666, #008080); 
+    background: linear-gradient(to right, #006666, #008080); 
+    border-radius: 5px;
+    box-shadow: 0px 0px 30px #f7f7f7;
+    color: #fff;
+    min-width: 544px;
+    min-height: 240px;
+}

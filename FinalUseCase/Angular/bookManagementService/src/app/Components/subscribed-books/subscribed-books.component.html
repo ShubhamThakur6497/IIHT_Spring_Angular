@@ -1,0 +1,10 @@
+<app-navbar></app-navbar>
+<div class="container-fluid mb-5 pb-3 d-flex flex-column justify-content-between align-items-center">
+    <h2 class="text-center">Subscribed Books</h2>
+    <app-book-list [books]="books"></app-book-list>
+    <div class="text-center m-5 p-5" *ngIf="!books.length">
+        No Book Subscribed yet. Go to books page and subscribe books.
+        <a [routerLink]="['/book']"> Go to Home</a> 
+    </div>
+</div>
+<app-footer></app-footer>

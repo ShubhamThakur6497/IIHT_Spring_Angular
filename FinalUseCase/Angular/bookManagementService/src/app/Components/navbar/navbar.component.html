@@ -1,0 +1,16 @@
+<header class="container-fluid d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-2 mb-2 border-bottom">
+    <a href="/" class="d-flex align-items-center col-12 col-md-3 mb-2 mb-md-0 text-decoration-none">
+        <img src="../../../assets/img/logo.PNG" alt="LOGO" >
+    </a>
+
+    <div class="d-none d-md-flex flex-column align-items-center"> 
+        <h1 class="m-0 p-0">Digital Books</h1>
+        <p class="mb-0">Your favourite place to read</p>
+    </div>
+
+    <div class="col-12 col-md-3 text-md-end">
+      <a href="javascript:void(0)" *ngIf="!isUserLoggedIn" [routerLink]="'/signIn'" class="btn mr-2">Sign in</a>
+      <a href="javascript:void(0)" *ngIf="!isUserLoggedIn" [routerLink]="'/signUp'" class="btn">Sign up</a>
+      <a href="javascript:void(0)" *ngIf="isUserLoggedIn" (click)="logout()" class="btn">Log out</a>
+    </div>
+  </header>

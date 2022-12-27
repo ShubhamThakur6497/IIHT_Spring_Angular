@@ -1,0 +1,45 @@
+<form (ngSubmit)="updateBook.emit(bookToUpdate)" class="d-flex flex-column justify-content-center mt-2 p-3" #bookForm="ngForm">
+    <div class="form-group w-100 d-flex mb-2">
+        <label class="col-4" for="title">Title</label>
+        <input type="text" class="col-8 form-control" id="title" placeholder="Enter title"
+            [(ngModel)]="bookToUpdate.bookName" name="bookName" #bookName="ngModel">
+    </div>
+
+    <div class="form-group w-100 d-flex mb-2">
+        <label class="col-4" for="category">Category</label>
+        <input type="text" class="col-8 form-control" id="category" placeholder="Enter category"
+            [(ngModel)]="bookToUpdate.category" name="category">
+    </div>
+
+    <div class="form-group w-100 d-flex mb-2">
+        <label class="col-4" for="author">Author</label>
+        <input type="text" class="col-8 form-control" id="author" placeholder="Enter author"
+            [(ngModel)]="bookToUpdate.author" name="author">
+    </div>
+
+    <div class="form-group w-100 d-flex mb-2">
+        <label class="col-4" for="publisher">Publisher</label>
+        <input type="text" class="col-8 form-control" id="publisher" placeholder="Enter publisher"
+            [(ngModel)]="bookToUpdate.publisher" name="publisher">
+    </div>
+
+    <div class="form-group w-100 d-flex mb-2" *ngIf="bookToUpdate.published_date">
+        <label class="col-4" for="published_date">Author</label>
+        <input type="text" readonly class="col-8 form-control" id="published_date" placeholder="Enter published date"
+            [(ngModel)]="bookToUpdate.published_date" name="published_date">
+    </div>
+
+    <div class="form-group w-100 d-flex mb-2">
+        <label class="col-4" for="price">Price</label>
+        <input type="number" class="col-8 form-control" id="price" placeholder="Enter price"
+            [(ngModel)]="bookToUpdate.price" name="price">
+    </div>
+
+    <div class="form-group w-100 d-flex mb-2">
+        <label class="col-4" for="content">Content</label>
+        <textarea class="col-8 form-control" id="content" name="content" placeholder="Enter book content"
+            [(ngModel)]="bookToUpdate.content"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3 align-self-center w-50" [disabled]="!bookForm.form.valid">Update</button>
+</form>

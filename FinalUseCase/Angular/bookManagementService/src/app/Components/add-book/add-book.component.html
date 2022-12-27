@@ -1,0 +1,7 @@
+<app-navbar></app-navbar>
+<div class="container-fluid mb-5 pb-3 d-flex flex-column justify-content-between align-items-center">
+    <h2 class="text-center">Add Book</h2>
+    <app-bookform [bookToUpdate]="bookToAdd" (updateBook)="addBook()"></app-bookform>
+</div>
+<app-footer></app-footer>
+

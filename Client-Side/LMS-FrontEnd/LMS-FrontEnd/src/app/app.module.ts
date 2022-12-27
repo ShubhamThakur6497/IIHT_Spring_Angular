@@ -18,6 +18,7 @@ import { MatListModule } from '@angular/material/list';
 
 
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './Components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     NavbarComponent,
     FormComponent,
-    DisplayBooksComponent
+    DisplayBooksComponent,
+    FooterComponent
     
   ],
   imports: [
